@@ -1,0 +1,15 @@
+html
+	head
+		meta(charset='utf-8')
+		title Преподаватель
+	body
+		if teacher != null
+			form(action="/teacher/"+teacher.id method="POST")
+				input(name="firstname" value=teacher.firstname)
+				input(name="lastname" value=teacher.lastname)
+				input(name="midlename" value=teacher.middlename)
+				input(name="attending" type="checkbox" id="attending")
+				label(for="attending") Пришел на занятие
+				input(type="submit" value='Отправить')
+		else
+			div Студент с таким id не найден
